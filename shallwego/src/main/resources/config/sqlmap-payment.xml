@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.itbank.shallwego.PaymentDAO">
+	
+	<insert id="booking" parameterType="payment">
+		insert into 
+			payment values 
+				(PAYMENT_SEQ.nextval, #{customer_idx}, #{card_number}, #{payment_price}, #{cvc_number}, 0, sysdate, #{room_idx}, #{checkin}, #{checkout})
+	</insert>
+	
+	<select id="selectReservation" resultType="payment" parameterType="int">
+		select p.*, a.accomm_name, a.accomm_idx
+    		from payment p
+        		join room r on r.room_idx = p.room_idx
+            		join accomm a on a.accomm_idx = r.accomm_idx
+                		where p.customer_idx = #{customer_idx} and p.refund = #{refund}
+                			order by p.payment_idx desc
+	</select>
+	
+	<select id="selectPay" resultType="payment" parameterType="int">
+		select * from payment
+			where payment_idx = #{payment_idx}
+	</select>
+	
+	<!-- 환불 -->
+	<update id="cancelBooking" parameterType="payment">
+		update payment set refund = 1 where cvc_number = #{cvc_number} and payment_idx = #{payment_idx}
+	</update>
+	
+</mapper>

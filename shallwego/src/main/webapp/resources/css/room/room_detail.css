@@ -1,0 +1,305 @@
+
+
+.ex { 
+      width: 100%;
+      height: 600px; 
+      box-sizing: border-box; 
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+.ex img {
+    width: 100%;
+}
+
+.photo {  
+         width: 100%; 
+         padding: 40px;
+         box-sizing: border-box;
+         margin: 30px 0;
+         background-color: rgb(241 241 241);
+         float: left;
+        }
+
+.map { 
+       height: 250px; 
+       width: 45%; 
+       margin: 10px 0 0 0;
+       background-color: turquoise; }
+
+.map img {
+    height: 250px;
+    width: 100%;
+}
+
+.address { margin: 10px 0 0 0 }
+
+/* 큰섹션 */
+.second_section { float: left;
+                  width: 100%;
+                  box-sizing: border-box;
+                  }
+
+.icon_section { width: 100%;
+                box-sizing: border-box;
+                float: left;
+                margin: 20px 0;
+                border-top:  1px solid #998d9285;
+                border-bottom: 1px solid #998d9285; 
+                }
+
+.last_section { 
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+    margin: 40px 0;
+}
+
+.last_section .title{
+    margin-bottom: 30px;
+}
+
+.review_link {
+	float: right;
+}
+/* 지도, 주변명소 */
+
+.where { 
+    float: left; 
+    width: 550px;
+    margin-right: 100px;
+    box-sizing: border-box;
+}
+
+.place { 
+    float: left;
+    width: 550px;
+    box-sizing: border-box;
+}
+
+.map { 
+    width: 100%;
+    float: left; }
+
+.address { float: left;
+           padding: 15px 0; 
+            font-size: 18px;
+        }
+
+.comments { padding: 10px 0 10px 0; }
+
+.comments li { padding: 10px 0 10px 0; }
+
+/* 아이콘 */
+
+.img {
+    float: left;
+    width: 60px;
+}
+
+.icon li { 
+    float: left; 
+    margin: 15px 10px;
+}
+
+/* 객실 */
+
+.roomtype {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 50px 50px 50px;
+    background-color: rgb(241 241 241);
+    margin-bottom: 50px;
+}
+
+.room_img {
+    float: left;
+    width: 570px;
+    height: 350px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.room_img img {
+    height: 370px;
+    width: 100%;
+}
+
+.roomtype_detail {
+    float: left;
+    width: 530px;
+    height: 350px;
+    box-sizing: border-box;
+    padding: 0 0 0 30px;
+}
+
+.roomtype_bed {
+    padding-top: 50px;
+}
+
+.roomtype_simbol {
+    padding-bottom: 160px;
+}
+
+.reservation {
+	width: auto;
+    float: right;
+    box-sizing: border-box;
+    margin-top: 170px; 
+}
+
+.price {
+    float: left;
+    height: 100%;
+    line-height: 44px;
+    margin-right: 36px;
+}
+
+.booking_btn {
+	float: left;
+}
+
+/* #yeahyak_btn {
+    width: 120px;
+    border-radius: 5px;
+    box-sizing: border-box;
+} */
+
+
+
+.rm-dt-title{
+    font-size: 30px;
+}
+
+.icon-name{
+    text-align: center;
+    float: left;
+    line-height: 42.85px;
+}
+
+/* 여기서 부터 수정입니다. */
+
+
+.room-dt-wrap {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    float: left;
+    margin-top: 30px;
+    position: relative;
+}
+
+.room-dt-img {
+    width: 300%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    
+}
+
+.room-dt-img img{
+    width: 33.333% !important;
+	float:left;
+}
+
+
+.room-dt-btn{
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top:50%;
+	
+    margin-top: -25px;
+	left:0;
+}
+
+.room-dt-btn .btn{
+	width: 50px !important;
+	height: 50px !important;
+}
+
+.room-dt-btn .left{
+	margin-left: 50px;
+	float:left; 
+}
+
+.room-dt-btn .right{
+	margin-right: 50px;
+	float:right; 
+}
+
+.room_img_modal{
+	width: 100%;
+	height:100%;
+	position: fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0, 0, 0, 0.15);
+	z-index: 999;
+	display: none;
+	
+}
+
+.rm_img_modal{
+	width:800px;
+	height: 500px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top:-250px;
+	margin-left:-400px;
+}
+
+.rm_img_modal span{
+	width: 100px;
+	height: 100px;
+	float:left;
+	font-size:50px;
+    margin-top: 175px;
+    text-align: center;
+}
+
+
+.rm_img_modal .img_wrap{
+	width:600px;
+	height:400px;
+	float:left;
+	overflow: hidden;
+	position: relative;
+	box-shadow: rgb(0 0 0 / 20%) 5px 5px 20px 5px;
+}
+	
+
+.rm_img_modal .img_wrap .img{
+	width:300%;
+	height:100%;
+	float:left;
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+.rm_img_modal .img_wrap .img img{
+	width:33.333%;
+	height:100%;
+	float:left;
+}
+
+.rm_img_modal .rm-btn-wrap{
+	width:100%;
+	height: 100px;
+	float:left;
+}
+
+.rm-btn-wrap .rm-btn{
+	margin:50px 360px;
+}
+
+.wrap-in{
+	position: relative;
+}
+.price_type {
+	font-size: 18px;
+}

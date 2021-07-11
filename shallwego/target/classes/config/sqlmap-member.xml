@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.itbank.shallwego.MemberDAO">
+<!-- insert, update, delete 는 반환형이 int로 고정이므로, resultType을 작성하지 않는다 -->
+<!-- 
+	parameterType : 값을 넣다. resulteType : 값을 내놓다. 
+		- 그러니까 모든 값을 불러올때는 값을 넣을 필요가 없으니 파라미터 필요없고
+		- 검색해서 불러오는 거는 값을 써서 내놓는 거니까 둘다필요함 !
+-->
+	<!-- 회원 가입 -->
+ 	<insert id="insertMember" parameterType="mb">
+		insert into customer
+			values(customer_seq.nextval, #{userid}, #{userpw}, 
+				#{username}, #{email}, #{phone_number}, null, 0, #{birth})
+	</insert>
+	
+	 <!-- 로그인 체크  -->
+	 <select id="selectMember" parameterType="mb" resultType="mb">
+	 	select * from customer where userid = #{userid} and userpw = #{userpw}
+	 </select>
+	 
+	<!-- 아이디체크 -->
+	<select id="selectUserid" parameterType="String" resultType="String">
+		select userid from customer
+			where userid = #{userid}
+	</select>
+
+	<!-- 이메일 체크 -->
+	<select id="selectEmail" parameterType="String" resultType="String">
+		select email from customer 
+			where email = #{email}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="updatePw" parameterType="mb">
+		update customer set userpw=#{userpw} where email=#{email}
+	</update>
+	
+	<!-- 등록되지않은 쿠폰 가져오기 -->
+	<select id="selectUnknownCoupon" parameterType="int" resultType="String">
+		select coupon_serial_number 
+			from coupon 
+				where coupon_details_idx = #{coupon_details_idx}
+					 and coupon_use = 0
+	</select>
+	
+	<select id="selectBirthCoupon" parameterType="int" resultType="integer">
+		select customer_idx
+			from coupon
+				where customer_idx = #{customer_idx}
+					and coupon_details_idx = 1
+	</select>
+	
+	<!-- 회원의 쿠폰 갯수 가져오기 -->
+	<select id="selectCouponCount" parameterType="int" resultType="int">
+		select count(*) from coupon where customer_idx = #{user_idx}
+	</select>
+	
+	<!-- 쿠폰 가져오기 -->
+	<select id="selectCouponList" parameterType="int" resultType="cb">
+		select    
+    		coupon_details.coupon_name, 
+    		coupon_details.coupon_price, 
+    		coupon_details.coupon_constraint, 
+    		coupon.coupon_idx,
+    		coupon.coupon_start, 
+    		coupon.coupon_end 
+    			from coupon
+    				join coupon_details
+        				on coupon_details.coupon_details_idx = coupon.coupon_details_idx
+						    where customer_idx = #{user_idx}
+	</select>
+	
+	<!-- 쿠폰등록 -->
+	<update id="updateCoupon" parameterType="hashmap">
+		update coupon set 
+			customer_idx = #{customer_idx}, coupon_start = sysdate, 
+			coupon_end = to_date(sysdate) + 
+				(select coupon_period from coupon_details 
+					where coupon_details_idx = 
+						(select coupon_details_idx from coupon 
+							where coupon_serial_number = #{coupon_serial_number})), 
+			coupon_use = 1 
+				where coupon_serial_number = #{coupon_serial_number}
+	</update>
+	
+	<!-- 쿠폰 사용 -->
+	<update id="updateUseCoupon" parameterType="cb">
+		update coupon set
+			coupon_use = 2
+				where coupon_idx = #{coupon_idx}
+					and customer_idx = #{customer_idx}
+	</update>
+	
+	<!-- memberInfo -->
+	<update id="updateMember" parameterType="mb">
+		update customer set 
+			username = #{username}, 
+			phone_number = #{phone_number}, 
+			email = #{email},
+			profile = #{profile}
+				where 
+					user_idx = #{user_idx}
+	</update>
+
+</mapper>
+
+
+
+
+

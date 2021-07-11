@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC 
+		"-//mybatis.org//DTD Config 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+		
+<!-- 
+	음 ...그러니까 ..
+	예를 들어 한테이블에 컬럼이 10개가 있는데 내가 수정을 3개밖에 안하고싶으면
+	파라미터를 3개만 받아와도 되지만
+	"마이바티스는 불러오는거랑 반환을 한개밖에 못한다 !!!!!!!!!"
+	그래서 dto 불러오는거임 
+-->
+
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="useGeneratedKeys" value="false" />
+		<setting name="mapUnderscoreToCamelCase" value="false" />
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.itbank.shallwego.MemberDTO" alias="mb" />
+		<typeAlias type="com.itbank.shallwego.AccommDTO" alias="accomm" />
+		<typeAlias type="com.itbank.shallwego.AccommFilterDTO" alias="afd" />
+		<typeAlias type="com.itbank.shallwego.NoticeDTO" alias="nb" />
+		<typeAlias type="com.itbank.shallwego.BoardDTO" alias="bb" />
+		<typeAlias type="com.itbank.shallwego.ReplyDTO" alias="rb" />
+		<typeAlias type="com.itbank.shallwego.CouponDTO" alias="cb" />
+		<typeAlias type="com.itbank.shallwego.RoomDTO" alias="room"/>
+		<typeAlias type="com.itbank.shallwego.SalesDTO" alias="sales"/>
+		<typeAlias type="com.itbank.shallwego.CfDTO" alias="cf"/>
+		<typeAlias type="com.itbank.shallwego.ReviewDTO" alias="rv"/>
+		<typeAlias type="com.itbank.shallwego.EventDTO" alias="ed"/>
+		<typeAlias type="com.itbank.shallwego.PaymentDTO" alias="payment"/>
+	</typeAliases>
+	
+</configuration>

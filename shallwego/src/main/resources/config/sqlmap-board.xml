@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.itbank.shallwego.BoardDAO">
+<!-- insert, update, delete 는 반환형이 int로 고정이므로, resultType을 작성하지 않는다 -->
+	
+	<!-- 공지사항 작성하기 -->
+	<insert id="insertNotice" parameterType="nb">
+		insert into notice 
+			values(
+				NOTICE_SEQ.nextval, #{notice_title}, <!-- 맴버 index -->
+				#{notice_content}, #{admin_idx}, <!-- 게시글 제목, 게시글 내 --> 
+				sysdate, 0
+			)
+	</insert>
+	
+	<!-- 이벤트 작성하기 -->
+	<insert id="insertEvent" parameterType="ed">
+		insert into event
+			values(
+				EVENT_SEQ.nextval,
+				#{event_img},
+				#{event_title},
+				#{event_subtitle},
+				#{event_start},
+				#{event_end},
+				#{event_content},
+				0
+			)
+	</insert>
+	
+	<!-- 문의 작성하기 -->
+	<insert id="insertQa" parameterType="bb">
+		insert into inquiry 
+			values(
+				INQUIRY_SEQ.nextval, #{customer_idx}, <!-- 맴버 index -->
+				#{ic_idx}, #{accomm_type},		  <!-- 카테고리, 문의유형 -->
+				#{inquiry_title}, #{inquiry_content}, <!-- 게시글 제목, 게시글 내 --> 
+				sysdate, 0
+			)
+	</insert>
+		
+	<!-- 공지사항 들고오기 -->
+	<select id="seletNotice" resultType="nb">
+ 		select * from notice order by notice_idx desc
+	</select>
+	
+	<!-- 이벤트 들고오기 -->
+	<select id="selectEvent" resultType="ed">
+ 		select * from event order by event_idx desc
+	</select>
+	
+	<!-- 공지사항 삭제하기 -->
+	<update id="deleteNotice" parameterType="int">
+		update notice set deleted = 1 where notice_idx = #{notice_idx}
+	</update>
+	
+	<!-- 이벤트 삭제하기 -->
+	<update id="deleteEvent" parameterType="int">
+		update event set deleted = 1 where event_idx = #{event_idx}
+	</update>
+	
+	<!-- 1:1문의 삭제하기 -->
+	<update id="deleteInquiry" parameterType="int">
+		update inquiry set deleted = 1 where inquiry_idx = #{inquiry_idx}
+	</update>
+	
+	<!-- 내 1:1문의 들고오기 -->
+	<select id="selectInquiryList" parameterType="int" resultType="bb">
+ 		select * from inquiry
+ 			where customer_idx = #{customer_idx} order by inquiry_idx desc
+	</select>
+
+	
+	<!-- (1:1문의사항) 카테고리 들고오기 -->
+	<select id="selectIc" resultType="hashmap">
+		select * from inquiry_category
+	</select>
+	
+	<!-- (1:1문의사항) 문의유형 들고오기 -->
+	<select id="selectAccomme" resultType="hashmap">
+		select * from accomm_type
+	</select>
+	
+	<!-- (1:1문의사항) 댓글 넣기 -->
+	<insert id="insertReply" parameterType="hashmap">
+		insert into reply
+			values(
+				REPLY_SEQ.nextval, #{inquiry_idx},			<!-- 댓글 인덱스, 게시물 인덱스 -->
+				#{answer_content}, #{answer_writer},		<!-- 댓글, 작성자 -->
+				sysdate, 0									<!-- 작성 날짜 -->
+			)
+	</insert>
+	
+	<!-- (1:1문의사항) 댓글 출력 -->
+	<select id="selectReply" resultType="rb">
+		select * from reply where deleted != 1
+	</select>
+	
+	<!-- 댓글 수정 -->
+	<update id="modifyReply" parameterType="rb">
+		update reply 
+			set answer_content = #{answer_content}, answer_date = sysdate
+				where answer_idx = #{answer_idx}
+					and inquiry_idx = #{inquiry_idx}
+	</update>
+	
+	<!-- 댓글 삭제 -->
+	<update id="deleteReply" parameterType="rb">
+		update reply 
+			set deleted = 1 
+				where answer_idx = #{answer_idx}
+					and inquiry_idx = #{inquiry_idx}
+	</update>
+
+</mapper>
+
+
+
+
+

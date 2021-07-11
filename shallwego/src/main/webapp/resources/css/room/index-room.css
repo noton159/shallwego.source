@@ -1,0 +1,343 @@
+.wrap-in{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.section{
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 0 !important;
+}
+
+.sec-room1 .section-in2{
+    padding: 0;
+}
+
+.search-box-wrap{
+	box-shadow: rgb(0 0 0 / 0%) 5px 5px 10px 5px;
+}
+
+
+/* 객실타입 */
+
+.filter-top{
+    width: 100%;
+    height: 500px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.filter-top .img_wrap{
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.filter-top .img_wrap img{ 
+    width: 33.333%;
+    height: 100%;
+    float: left;
+}
+
+.slide-btn{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 225px;
+    left: 0;
+}
+
+.slide-btn .left{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: 30px;
+}
+
+.slide-btn .right{
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-right: 30px;
+}
+
+.slide-btn img{
+    width: 100%;
+}
+
+/* filter-left */
+
+.filter-left{
+    width: 20%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;    
+    background-color: rgb(247 247 247);
+}
+
+.ft-choice{
+    float: left;
+}
+
+.ft-choice li{
+    float: left;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.ft-choice li b{
+    width: 100%;
+    margin-bottom: 10px;
+    float: left;
+}
+
+
+.ft-choice li p{
+    width: 100%;
+    float: left;
+    padding: 3px 0;
+}
+
+
+
+
+/* filter-right */
+
+.filter-right{
+    width: 80%;
+    float: left;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.ft-header{
+    width: 100%;
+    float: left;
+}
+
+.ft-header h2{
+    margin-bottom: 20px;
+}
+
+.ft-btn-wrap{
+    width: 100%;
+    float: left;
+}
+
+.ft-btn-wrap li{
+    width: 18.4%;
+    float: left;
+    margin-right: 2%;   
+    background-color: rgb(234 234 234); 
+    padding: 10px 0;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.ft-btn-wrap li .filter_accomm_type{
+	
+    width: 100%;
+    display: block;
+    float: left;
+    background: none;
+}
+
+.ft-btn-wrap li:last-child{
+    margin-right: 0;
+}
+
+.ft-btn-wrap li h3{
+    font-size: 16px;
+}
+
+/* filter-right-center */
+
+.ft-right-center{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.reserBtn {
+	float: left;
+	margin-left: 350px;
+	margin-top: 20px;
+	border-radius: 5px;
+	box-sizing: border-box;	
+	padding: 5px 20px !important;
+}
+
+.reserBtn:hover{
+	box-sizing: border-box; 
+    border: 1px solid #f3405a; 
+    color: #f3405a; 
+    background-color: white;
+}
+
+.hotelPrice {
+	margin-top: 32px;
+}
+
+.ft-right-center .lodging{
+    width: 48%;
+    float: left;
+    border: 1px solid rgb(234 234 234);
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 30px 4% 10px 0;
+    
+}
+
+.ft-right-center .lodging:nth-child(2n){
+    margin-right: 0;
+}
+
+.ft-right-center .lodging li{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+}
+
+.indexImg {
+	background-color: green;
+}
+
+.ft-right-center .lodging li a img{
+    width: 100%;
+    height: 400px;
+    float: left;
+}
+
+.ft-right-center .lodging li:nth-child(1){
+    height: 400px;
+    overflow: hidden;
+}
+
+.ft-right-center .lodging li:nth-child(2){
+    padding: 10px 10px;
+}
+
+.ft-right-center .lodging li:nth-child(2){
+    padding: 10px 10px;
+}
+
+.ft-right-center .lodging .lodging-price, .ft-right-center .lodging .lodging-price{
+    padding: 0 10px;
+    text-align: right;
+    font-size: 13px;
+}
+
+.ft-right-center .lodging .lodging-price span{
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.ft-right-center .lodging .address{
+    width: 100%;
+    background-color: rgb(234 234 234);
+    font-size: 13px;
+    padding: 5px 5px;
+}
+
+.address {
+	font-weight: bold;
+}
+
+.lodging-btn button{
+    margin: 30px 10px;
+    float: right;
+    padding: 5px 10px;
+}
+
+.ft_btn a{
+	display:block;
+}
+
+.filter_btn_wrap{
+	width: 100%;
+	margin-bottom: 0 !important;
+}
+
+#left_filter_btn{
+	font-size: 15px;
+}
+
+/* var */
+.filter_var_wrap, .var_price, .tier_wrap{
+	width: 100%;
+	float: left;
+}
+
+.filter_var_wrap{
+	padding: 10px 0;
+    position: relative;
+}
+
+
+.var_filter{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    float: left;
+    padding: 12px 0 0 0;
+}
+ 
+ 
+ 
+ /* 필터 티어 */
+ .tier_wrap .tier{
+ 	width: 49%;
+ 	margin-right: 2%;
+ 	height: 35px;
+ 	border: 1px solid #bebebe;
+ 	box-sizing: border-box;
+ 	color: #bebebe;
+ 	background: white;
+ 	float: left;
+ 	cursor: pointer;
+ 	border-radius: 5px;
+ 	margin-bottom: 5px;
+ 	text-align: center;
+ 	line-height: 32px;
+    font-size: 14px;
+ }
+ 
+ .tier_wrap .tier:nth-child(2n){
+ 	margin-right: 0;
+ }
+ 
+ 
+ .filter_pink{
+    box-sizing: border-box !important;
+    border: 1px solid #f3405a !important;
+    color: #f3405a !important;
+ }
+ .filter_gray{
+    box-sizing: border-box !important;
+    border: 1px solid #bebebe !important;
+    color: #bebebe !important;
+ }
+ 
+ .tier_ck{   
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0 !important;
+ }
+ 
+ .label_checkbox{
+    cursor: pointer;
+ }
+ 
+ 
+ 
+ 

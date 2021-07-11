@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.itbank.shallwego.ReviewDAO">
+	
+	<!-- 리뷰등록 -->
+	<insert id="insertReview" parameterType="rv">
+		insert into review 
+			values (
+					REVIEW_SEQ.nextval, 
+					#{accomm_idx},
+					#{room_idx}, 
+					#{customer_idx}, 
+					#{kindness}, 
+					#{cleanliness}, 
+					#{transportation}, 
+					#{review_title}, 
+					#{review_content}, 
+					sysdate
+				)
+	</insert>
+
+</mapper>
+
+
+
+
+

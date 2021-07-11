@@ -1,0 +1,109 @@
+
+
+.login-wrap{
+    width: 500px;
+    margin: 50px auto;
+}
+
+.login{
+    width: 500px;
+    float: left;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    padding: 30px 30px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.login-wrap .login li{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.login-wrap .login li h1{
+    font-size: 30px;
+}
+
+.login-wrap .login li p{
+    color:#9e9e9e;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.btn100{
+    padding: 20px 0;
+    font-size: 20px;
+    color: rgb(140, 140, 140);
+    border: 0;
+}
+
+.btn100:hover{
+    background-image: linear-gradient(to right, rgb(246, 88, 117) -8%, rgb(248, 224, 142) 291%);
+    color: white;
+    font-weight: bold;
+}
+
+.login-join-wrap{
+    width: 100%;
+    float: left;
+
+}
+
+.login-join-wrap span{
+    width: auto;
+    
+}
+
+.login-join-wrap span:nth-child(1){
+    float: left;
+    
+}
+
+.login-join-wrap span:nth-child(2){
+    float: right;
+    font-weight: bold;
+}
+
+.login-join-wrap span input{
+    margin-right: 10px;
+}
+
+.login-join-wrap span{
+    font-weight: 600;
+}
+
+.login hr{
+    margin: 20px 0;
+}
+
+.pw-find{
+    text-align: right;
+}
+
+
+/* 200330 */
+
+.pw-find p {
+    cursor: pointer;
+}
+
+.passwordFind, .passwordFind2{
+    display: none;
+}
+
+.btn04{
+    height: 50px;
+}
+
+.text01-5{
+    margin: 0;
+}
+
+.email{
+    margin-top: 20px;
+}
+
+.pwConfirm-btn{
+    margin-top: 30px;
+}

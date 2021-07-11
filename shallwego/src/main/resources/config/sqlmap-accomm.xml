@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.itbank.shallwego.AccommDAO">
+	
+	<insert id="insertAccomm" parameterType="accomm">
+		insert into accomm
+			values (ACCOMM_SEQ.nextval, #{accomm_name}, #{accomm_type},
+				#{accomm_address}, #{accomm_checkin}, #{accomm_checkout},
+				#{accomm_img}, #{accomm_intro}, #{cf_idx},
+				#{usage_guide}, #{reservation_notice}, #{accomm_event},
+				'0')
+	</insert>
+	
+	<select id="selectOne" resultType="int" parameterType="string">
+		select accomm_idx from accomm
+			where accomm_name=#{accomm_name}
+	</select>
+	
+	<insert id="insertTier" parameterType="accomm">
+		insert into tier
+			values (TIER_SEQ.nextval, #{tier_number}, #{accomm_idx})
+	</insert>
+	
+</mapper>
+
+
+
+
+

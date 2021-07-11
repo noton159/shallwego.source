@@ -1,0 +1,246 @@
+.section-in2{
+    padding: 40px 0 !important;
+}
+
+.btn04 {
+    width: 100px !important; 
+    padding: 15px 20px; 
+    text-align: center; 
+    border: 1px solid #f3405a;
+    background-color: white;
+    cursor: pointer;
+
+}
+
+.btn04:hover{
+    background-color: #f3405a;
+    border: 0;
+    color:white;
+}
+
+/* 폰트 */
+h3 { font-weight: bold; }
+
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: rgb(235, 235, 235);
+    height: 100%;
+    width: 100%;
+}
+
+.gray-f { color: rgb(177, 177, 177); }
+.pink-f { color: #f3405a; display: block; }
+
+.wrap{
+    width: 100%;
+    position: relative;
+}
+
+.wrap-in{ 
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.left_ul {
+    float: left;
+    width: 750px;
+    margin-top: 70px;
+    background-color: rgb(235, 235, 235);
+}
+
+.right_ul {
+    float: right;
+    width: 410px;
+    margin-top: 70px;
+    background-color: rrgb(235, 235, 235);
+}
+
+.second_section {
+    background-color: wheat;
+    padding: 0 24px 24px;
+    padding-top: 10px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 40px;    
+}
+
+.second_section {
+    background-color: rgb(44, 96, 131);
+    padding: 0 24px 24px;
+    padding-top: 10px;
+    padding-right: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 40px; 
+}
+
+.second_section {
+    background-color: white;
+    padding: 0 24px 24px;
+    padding-top: 10px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.top_fsd {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 48px;
+    margin-bottom: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.booking1_div {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.booking2_div {
+    width: 100%;
+    height: 40px;
+}
+
+.btn_cs1 {
+    float: right;
+    margin: 0 15px;
+}
+
+.btn_cs2 {
+    float: right;
+}
+
+.booking_space1 {
+    width: 15%;
+}
+
+.booking_space2 {
+    width: auto;
+}
+
+.booking_span1 {
+    border-right: 1px solid black;
+    padding-right: 15px;
+}
+
+.booking_span2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.booking_span3 {
+    border-left: 1px solid black;
+    padding-left: 15px;
+}
+
+.booking_cancel1 {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+}
+
+.booking_cancel2 {
+    padding: 20px 20px;
+    position: relative;
+    
+}
+
+.booking_ad1 {
+    padding-bottom: 20px;
+}
+
+.booking_ad2 {
+    padding-top: 20px;
+}
+
+.btn_cs3 {
+    float: right;
+    padding-left: 10px;
+}
+
+.third_section {
+    background-color: white;
+    padding: 0 24px 24px;
+    padding-top: 30px;
+    padding-right: 24px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;  
+}
+
+.top_fsd2 {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 48px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.booking_space3 {
+    width: 30%;
+}
+
+.booking_space4 {
+    width: auto;
+}
+
+.booking_space7 {
+    padding-left: 253px;
+    padding-bottom: 20px;
+}
+
+.booking_ad3 {
+    padding-bottom: 20px;
+}
+
+.booking_map {
+    width: 40%;
+    float: right;
+}
+
+.booking_map_div {
+    padding-bottom: 20px;
+}
+
+.top_fsd3 {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 48px;
+    padding-top: 20px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(238, 238, 238);
+}
+
+.top_fsd4 {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 43px;
+}
+
+.cancel_policy {
+    color: #f3405a;
+    cursor: pointer;
+}

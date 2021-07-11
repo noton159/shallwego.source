@@ -1,0 +1,300 @@
+.section{
+    padding: 100px 0 200px 0 !important;
+}
+
+.rv-right{
+    box-sizing: border-box;
+}
+
+.qa-content-wrap{
+    width: 100%;
+    float: left;
+}
+
+.qa-content-wrap li{
+    width: 100%;
+    float: left;
+    padding: 10px 20px;
+    margin-bottom: 1px solid lightgray;
+    box-sizing: border-box;
+}
+
+.qa_category, .qa_inquiry{
+	width: 49.5% !important;
+	
+}
+
+.qa-new li h3{
+    margin-bottom: 10px;
+}
+
+.qa-new li .text01{
+    font-size: 18px;
+}
+
+/* ************* */
+
+.qa-con-on{
+    display: block;
+}
+
+.qa-con-none{
+    display: none;
+}
+
+.notice-con-none{
+    display: none;
+}
+
+.notice_content{
+    padding: 10px 10px;
+}
+
+/* ************* */
+
+
+.qa-content{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.qa-content a{
+    display: block;
+}
+
+.qa-content a h3{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.rv-on{
+    display: none;
+}
+
+.on{
+    display: block;
+}
+
+.notice-title{
+    float: left;
+    line-height: 45px;
+    margin-right: 20px;
+}
+
+.notice-write input{
+    height: 300px;
+}
+
+.qa-write-on{
+    display: block;
+}
+
+.qa-write-wrap2{
+    display: none;
+}
+
+.qa-comment{
+	padding: 10px 0;
+}
+
+
+/* 210402 */
+
+/* .qa-write, .qa-write-null{
+	display: none;
+}
+ */
+ 
+.myqa-title, .myqa-date, .myqa-content, .qa-comment-wrap, .qa-comment, .qa-comment-write, 
+.notice-title, .notice-date, .notice-content, .notice-comment-wrap, .notice-comment, .notice-comment-write, 
+.event-title, .event-date, .event-content, .event-comment-wrap, .event-comment, .event-comment-write{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.myqa-list-sub, .notice-list-sub, .event-list-sub{
+    padding: 20px 10px;
+    display: none;
+    box-sizing: border-box;
+} 
+
+.myqa-title, .notice-title{
+    cursor: pointer;
+}
+
+.myqa-date, .notice-date{
+    margin-bottom: 30px;
+}
+
+.myqa-date span, .notice-date span{
+    float: left;
+    margin-right: 10px;
+}
+
+.qa-comment-wrap, .notice-comment-wrap{
+    padding: 10px 10px;
+    margin-top: 50px;    
+    background: rgb(245 245 245);
+    box-sizing: border-box;
+}
+
+.myqa-writer, .notice-writer{
+    margin-bottom: 5px;
+}
+
+.qa-comment-write textarea{
+    height: 100px;
+}
+
+.qa-comment-write input{
+    float: right;
+}
+
+.questions{
+	height: 200px !important;
+}
+
+/* .myqa-list-sub{
+	display:none;
+} */
+
+
+/* 2021-04-09 */
+
+.notice-new .title, .event-new .title{
+	width: 14%;
+	float: left;
+    line-height: 50px;
+}
+
+.notice-new .content, .event-new .content{
+	width: 86%;
+	float: left;
+}
+
+.notice-new li, .event-new li{
+	width: 100%;
+	float: left;
+	padding: 10px 0;
+}
+
+/* 이벤트 */
+
+
+/* board-btn 영역 */
+
+.notice-content-wrap{
+	width:100%;
+	float:left;
+}
+
+
+.qa-btn-wrap{
+    width: 100%;
+    height: 50px;
+    float: left;
+    border-bottom: 1px solid lightgray;
+}
+
+.qa-btn-wrap li{
+    width: 20%;
+    height: 49.5px;
+    line-height: 30px;
+    float: left;
+    padding: 10px 10px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.myqa-on, .notice-on, .event-on{
+	display:block;
+}
+
+#write-btn, #notice_btn, #event_btn{
+	float:right;
+}
+
+.a{
+	padding: 10px 10px;
+}
+
+.board-left-btn{
+	width: 100%;
+	float:left;
+    margin-top: 50px;
+}
+
+.board-left-btn input{
+	float:right;
+}
+
+#inquiry_before_btn{
+	margin-right: 10px;
+}
+
+#qa-comment-btn{
+	float: right;
+}
+
+#answer_writer{
+    width: 85%;
+	float: left;
+	
+}
+
+#answer_date{
+	width: 15%;
+	float: left;
+    margin-top: 5px;
+	color: #9a9a9a;
+    font-size: 14px;
+}
+
+#answer_delete, #answer_modify{
+	color: #9a9a9a;
+	cursor: pointer;
+	font-size: 14px;
+	margin-left: 5px;
+}
+
+#answer_content{
+	width: 100%;
+	float: left;
+}
+
+.answer_content2{
+	width: 100%;
+    height: 50px;
+    border: 1px solid #dddddd;
+	float: left;
+	display: none;
+	padding: 5px 5px;
+	box-sizing: border-box;
+}
+
+.re-mo-btn{
+	float: right;
+    background: #393939;
+    color: white;
+    display:none;
+    margin-top: 5px;
+}
+
+.re-mo-btn2{
+	float: right;
+    border:1px solid #393939;
+    color: #393939;
+    display:none;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#notice-del-btn{
+	margin-right: 5px;
+}
+
+

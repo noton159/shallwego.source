@@ -1,0 +1,145 @@
+
+/* search-box */
+
+.sec-room1{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.search-box-wrap{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    float: left;
+    border: 2px solid white;
+    overflow: hidden;
+    border: 1px solid lightgray;
+    border-radius: 5px;    
+    box-shadow: rgb(0 0 0 / 5%) 5px 5px 15px 5px;
+}
+
+.search-box{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.search-icon{
+    width: 40px;
+    height: 40px;    
+    margin-top: 10px;
+}
+
+.search-box .glasses{
+    background: url("../img/icon/glasses.png")
+     center center / contain no-repeat;
+}
+
+.search-box .glasses2{
+    background: url("../img/icon/glasses2.png")
+     center center / contain no-repeat;
+}
+
+.search-box .calendar{
+    background: url("../img/icon/calendar.png")
+     center center / contain no-repeat;
+}
+
+.search-box .people{
+    background: url("../img/icon/people.png")
+     center center / contain no-repeat;
+}
+
+.search-box:nth-child(1){
+    /* width: 375px; */
+    width: 37.5%;
+    float: left;
+    border-right: 1px solid lightgray;
+    box-sizing: border-box;
+}
+
+.search-box:nth-child(1) input{
+    /* width: 300px; */
+    width: 80%;
+    height: 60px;
+    border: 0;
+    float: right;
+    padding: 0 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.search-box:nth-child(2){
+    /* width: 320px; */
+    width: 32%;
+    height: 60px;
+    float: left;
+    border-right:1px solid lightgray;
+    box-sizing: border-box;
+}
+
+.search-box:nth-child(3){
+    /* width: 235px; */
+    width: 23.5%;
+    height: 60px;
+    float: left;
+    border-right: 1px solid lightgray;
+    box-sizing: border-box;
+}
+
+.search-box:nth-child(4){
+    /* width: 80px; */
+    width: 7%;
+    height: 60px;
+    float: left;
+    box-sizing: border-box;
+}
+
+
+.search-icon{
+    width: 40px;
+    float: left;
+}
+
+
+.check{
+    /* width: 80px; */
+    width: 27%;
+    float: left;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.check:nth-child(3){
+    line-height: 40px;
+}
+
+.check p, .check2 p{
+    font-size: 13px;
+}
+
+.check2{
+    /* width: 160px; */ 
+    width: 76%;
+    float: left;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.search-btn .search-icon{
+    margin: 0 0 0 5px;
+}
+
+.search-btn{    
+    width: 70px;
+    height: 60px;
+    border: 0;
+    float: left;
+}
+
+
+
+
+

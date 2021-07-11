@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.itbank.shallwego.LoadDAO">
+	<select id="selectAccomm" parameterType="int" resultType="accomm">
+		select * from accomm
+			where accomm_idx = #{accomm_idx}
+	</select>
+	
+	<select id="selectRoom" parameterType="int" resultType="room">
+	 select 
+      	a.*, b.cost_price
+          from room a, rooms_price b
+          	where a.accomm_idx = #{accomm_idx}
+          		and a.room_idx = b.room_idx
+          			ORDER BY room_name asc
+   </select>
+	
+	<select id="selectTier" parameterType="int" resultType="int">
+      select tier_number from tier
+         where accomm_idx = #{accomm_idx}
+   </select>
+	
+	<select id="selectCf" parameterType="int" resultType="cf">
+		select * from convenience_facilties
+			where cf_idx = #{cf_idx}
+	</select>
+	
+	
+	<select id="selectOneRoom" parameterType="int" resultType="room">
+		select a.*, b.cost_price from room a, rooms_price b 
+			where a.room_idx = b.room_idx
+			and a.room_idx = #{room_idx}
+	</select>
+	
+	<!-- 검색어 중에서 지역 찾기 -->
+	<select id="selectRegion" resultType="string">
+		select region_name 
+			from region
+				where
+				<foreach collection="array" item="region_name" open="(" close=")" separator="or">
+					region_name like '%' || #{region_name} || '%'
+				</foreach>
+	</select>
+	
+	<!-- 지역에서 없을 시 지역서브에서 찾기 -->
+	<select id="selectRegion_sub" resultType="string">
+		select rs_name 
+			from region_sub
+				where
+				<foreach collection="array" item="rs_name" open="(" close=")" separator="or">
+					rs_name like '%' || #{rs_name} || '%'
+				</foreach>
+	</select>
+	
+	<!-- 검색어 중에서 숙소타입 찾기 -->
+	<select id="selectAccomm_type" resultType="string">
+		select accomm_type
+			from accomm_type
+				where 
+				<foreach collection="array" item="accomm_type" open="(" close=")" separator="or">
+					accomm_type = #{accomm_type}
+				</foreach>
+	</select>
+	
+	<!-- 숙소타입을 인덱스값으로 받아오기 -->
+	<select id="selectAccomm_type_idx" resultType="int">
+		select accomm_type_idx
+			from accomm_type
+				where
+					accomm_type = #{accomm_type_value}
+	</select>
+	
+	<!-- 모든 리뷰 받아오기 -->
+	<select id="selectAllReview" resultType="rv">
+		select 
+    		rv2.accomm_idx,
+    		count(rv2.review_idx) as count,
+    		sum((select 
+    				round(sum(rv1.kindness + rv1.cleanliness + rv1.transportation) / 3, 1)
+        				from review rv1
+            				where rv1.review_idx = rv2.review_idx)) as accomm_avg
+        		from review rv2
+            		group by rv2.accomm_idx
+	</select>
+	
+	<!-- 해당 숙소의 리뷰 받아오기 -->
+	<select id="selectReviewList" parameterType="hashmap" resultType="rv">
+        <!-- 평점 최근작성 순 -->
+		select  <!-- 가져온다. -->
+         rv.*,	<!-- 리뷰에 모든 컬럼과, --> 
+         rm.room_name, <!-- 룸 이름과, -->
+         c.userid,	<!-- 유저 아이디와, -->
+         (select count(*) from review where accomm_idx = #{accomm_idx}) as count,	<!-- 리뷰 테이블에 숙소 개수랑, -->
+         (select round(sum(review.kindness + review.cleanliness + review.transportation)/3) as review_avg <!-- 친절도/청결도/위치만족도 의 평균을  -->
+         from review	<!-- 리뷰테이블에서 들고온다. -->
+          where review_idx = rv.review_idx) as review_avg	<!-- 조건은 리뷰 아이디엑스와 리뷰 아이디엑스가 동일 한 것을 -->
+             from review rv	<!-- 리뷰테이블에서 들고온다. -->
+                 join room rm on rm.room_idx = rv.room_idx	<!-- ???? join ㅅㅂ -->
+                  join customer c on rv.customer_idx = c.user_idx
+                      where rv.accomm_idx = #{accomm_idx}	<!-- 조건은 리뷰에 숙소 아이디엑스랑 동일한거 -->
+                          	<!-- 날짜 내림차순 순서로 -->
+          <!-- 최근 작성순 -->
+          <if test="filter == 0">	
+           order by rv.review_date desc
+          </if>
+          
+          <!-- 평점 높은 순 -->
+          <if test="filter == 1">	
+           order by review_avg desc, rv.review_date desc
+          </if>
+          
+          <!-- 평점 낮은 순 -->
+          <if test="filter == 2">
+           order by review_avg asc, rv.review_date desc
+          </if>
+	</select>
+	
+	<select id="selectMyReviewList" parameterType="int" resultType="rv">
+		select 
+         rv.*, 
+         rm.room_name, 
+         c.userid,
+         (select round(sum(review.kindness + review.cleanliness + review.transportation)/3) as avg 
+         from review where review_idx = rv.review_idx) as review_avg
+             from review rv
+                 join room rm on rm.room_idx = rv.room_idx
+                  join customer c on rv.customer_idx = c.user_idx
+                      where rv.customer_idx = #{user_idx}
+                          order by rv.review_date desc
+	</select>
+	
+	<select id="selectSearchList" parameterType="afd" resultType="accomm">
+		select distinct
+          ac.*,
+          rp.minprice1,
+          rp.minprice2,
+          rm.max_person,
+          rm.room_hire_time
+              from
+              	<if test="tList != null">    		
+		    		tier t,
+				</if> 
+              	accomm ac
+              	
+                  join (select 
+                          rp1.accomm_idx,
+                          min(rp1.cost_price) as minprice1,
+                          min(rp2.cost_price) as minprice2
+                              from rooms_price rp1, rooms_price rp2
+                                  where rp2.room_type != 2 and
+                                      rp1.accomm_idx = rp2.accomm_idx
+                                          group by rp1.accomm_idx, rp2.accomm_idx
+                                            having min(rp1.cost_price) >= #{min_filter_price}
+                                                and min(rp1.cost_price) &lt;= #{max_filter_price}
+                                                or min(rp2.cost_price) >= #{min_filter_price}
+                                                and min(rp2.cost_price) &lt;= #{max_filter_price}
+                                              order by rp1.accomm_idx) rp on rp.accomm_idx = ac.accomm_idx
+                  join (select 
+                          rm.accomm_idx,
+                          max(rm.room_hire_time) room_hire_time,
+                          max(rm.max_person) as max_person
+                              from room rm
+                                  group by rm.accomm_idx
+                                      order by rm.accomm_idx) rm on rm.accomm_idx = ac.accomm_idx
+                 <if test="avg != 0">
+                 join (select 
+                        accomm_idx,
+                        round(avg((kindness + cleanliness + transportation)/3)) as avg 
+                            from review
+                                group by accomm_idx 
+                                    having avg((kindness + cleanliness + transportation)/3) >= #{avg}) rv on rv.accomm_idx = ac.accomm_idx
+                 </if>
+                    where rm.max_person >= #{person}
+					<if test="accomm_filter_type != 0">
+						and ac.accomm_type = #{accomm_filter_type}
+					</if>
+					<if test="tList != null">
+						and ac.accomm_idx = t.accomm_idx 
+						and <foreach collection="tList" item="tier_number" open="(" close=")" separator="or">
+							t.tier_number = #{tier_number}
+							</foreach>
+					</if>
+					<if test="region != null">
+                     and ac.accomm_address like '%' || #{region} || '%'
+                     </if>   
+                     <if test="accomm_search_type != 0 and accomm_search_type != null">
+                     and ac.accomm_type = #{accomm_search_type}
+                     </if>
+                      <if test="accomm_search_name != null">
+                     and ac.accomm_name like '%' || #{accomm_search_name} || '%'
+                     </if>
+                     	order by ac.accomm_idx
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,670 @@
+*{ margin: 0; padding: 0; }
+ul,li{ list-style: none; }
+a{ text-decoration: none; color: black; }
+
+
+/* 폰트 */
+h3 { font-weight: bold; } 
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: rgb(235, 235, 235);
+    height: 100%;
+    width: 100%;
+}
+
+.gray-f { color: rgb(177, 177, 177); }
+.pink-f { color: #f3405a; display: block; }
+
+.wrap{
+    width: 100%;
+    position: relative;
+}
+
+.wrap-in{ 
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 왼쪽 첫번째 li */
+.second_section {
+    background-color: white;
+    padding: 0 24px 24px;
+    padding-top: 0px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 40px;    
+}
+
+.payment_how {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 48px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.payment_card1 {
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition-delay: 0s;
+    transition-property: all;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(246, 88, 117);
+    border-right-color: rgb(246, 88, 117);
+    border-bottom-color: rgb(246, 88, 117);
+    border-left-color: rgb(246, 88, 117);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+
+.payment_card2 {
+    background-color: rgb(246, 88, 117);
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transition-delay: initial;
+    transition-property: all;
+}
+
+.payment_card3 {
+    height: 52px;
+    padding-top: 0px;
+    padding-right: 16px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.payment_box {
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 10px;
+    font-weight: 300;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    color: inherit;
+}
+
+.payment_cardName {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.payment_cardName h4 {
+    padding-top: 3px;
+}
+
+.payment_window {
+    padding-top: 16px;
+    background-color: rgb(255, 255, 255);
+}
+
+.payment_section {
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+}
+
+.payment_div {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.payment_div_div {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardNum {
+    justify-content: left;
+}
+
+.payment_last_div {
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+    /* border: solid 1px #dadada; */
+    /* padding: 10px 13px 10px 18px; */
+    padding-right: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+}
+
+.payment_div_div1 {
+    margin-top: 4px;
+    width: 160px;
+    position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.payment_short_div1 {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 10px;
+    margin-right: 0px;
+}
+
+.card_img_daddy {
+    float: left;
+}
+
+.card_img {
+    position: relative;
+    margin-right: 7px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI4IDI4Ij48cGF0aCBkPSJNMjMuMzMzIDYuNTMzYzEuMDMxIDAgMS44NjcuODM2IDEuODY3IDEuODY3djExLjJjMCAxLjAzLS44MzYgMS44NjctMS44NjcgMS44NjdINC42NjdBMS44NjcgMS44NjcgMCAwMTIuOCAxOS42VjguNGMwLTEuMDMuODM2LTEuODY3IDEuODY3LTEuODY3aDE4LjY2NnptMCA1LjZINC42NjZWMTkuNmgxOC42Njd2LTcuNDY3em0wLTMuNzMzSDQuNjY3bC0uMDAxIDEuODY2aDE4LjY2N1Y4LjR6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=") center center / contain no-repeat;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    appearance: none;
+}
+
+.star {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 0px;
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMjIyIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOC44NTIgMTQuMzM2TDE0Ljc4NyAxMmw0LjA2NS0yLjMzNmMuMDctLjA0LjEyLS4xMDUuMTQtLjE4YS4yODEuMjgxIDAgMDAtLjAzOC0uMjJMMTcuNzYgNy40M2EuMzIzLjMyMyAwIDAwLS40MjYtLjA5NmwtMy44OCAyLjIzVjUuMjljMC0uMTYtLjEzOS0uMjkxLS4zMS0uMjkxaC0yLjI4OGMtLjE3MSAwLS4zMS4xMy0uMzEuMjl2NC4yNzRsLTMuODgtMi4yM2EuMzIxLjMyMSAwIDAwLS40MjYuMDk3TDUuMDQ1IDkuMjY1YS4yNzUuMjc1IDAgMDAtLjAzNi4yMmMuMDE5LjA3NC4wNjkuMTQuMTM5LjE4TDkuMjEzIDEybC00LjA2NSAyLjMzNmEuMjk2LjI5NiAwIDAwLS4xNC4xOC4yOC4yOCAwIDAwLjAzNy4yMmwxLjE5NSAxLjgzM2MuMDkuMTM3LjI4LjE4LjQyNS4wOTdsMy44ODEtMi4yM3Y0LjI3M2MwIC4xNi4xMzkuMjkxLjMxLjI5MWgyLjI4OGMuMTcxIDAgLjMxLS4xMy4zMS0uMjl2LTQuMjc0bDMuODggMi4yM2MuMTQ2LjA4NC4zMzcuMDQuNDI2LS4wOTZsMS4xOTUtMS44MzVhLjI3NS4yNzUgMCAwMC4wMzYtLjIyLjI5Ni4yOTYgMCAwMC0uMTM5LS4xOHoiLz48L3N2Zz4=") center center / cover no-repeat;
+}
+
+.payment_short_div2 {
+    height: 50px;
+    float: left;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+}
+
+.payment_short_box1 {
+    width: 100%;
+    font-size: 15px;
+    height: 40px;
+    padding: 14px;
+    border: solid 1px #dadada;
+    box-sizing: border-box;
+    appearance: none;
+    border-radius: 0px;
+}
+
+.payment_short_box2 {
+    width: 12%;
+    font-size: 15px;
+    height: 40px;
+    padding: 14px;
+    border: solid 1px #dadada;
+    box-sizing: border-box;
+    appearance: none;
+    border-radius: 0px;
+}
+
+.left_ul {
+	margin-top: 110px;
+    float: left;
+    width: 750px;
+    background-color: rgb(235, 235, 235);
+}
+
+/* 왼쪽 첫번째 li 안 내용 */
+
+.top_fsd {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 48px;
+    margin-bottom: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.fsd {
+    margin-bottom: 15px;
+    
+}
+
+.box {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #dadada;
+    font-size: 15px;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+.short_box {
+    display: block;
+    position: relative;
+    width: 340px;
+    height: 40px;
+    border: 1px solid #dadada;
+    font-size: 15px;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+.ssd {
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 15px;
+}
+
+.ssd2 {
+    margin-top: 7px;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: solid 1px #dadada;
+    padding: 10px 14px 10px 14px;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 15px;
+}
+
+.long_div {
+	justify-content: center;
+}
+
+.def_div {
+    width: 100%;
+    float: left;
+    padding-right: 20px;
+    margin-top: 7px;
+    margin-bottom: 15px;
+}
+
+.short1_div {
+    float: left;
+    /* padding-right: 10px; */
+}
+
+.short2_div {
+    float: right;
+    display: inline;
+}
+
+
+/* 왼쪽 세번째 li */
+
+.discount_info {
+    height: 48px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.coupon {
+    padding-top: 16px;
+}
+
+.coupon_info {
+    margin-bottom: 16px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.coupon_p {
+    width: 140px;
+    font-weight: 500;
+}
+
+.coupon_div {
+    margin-left: auto;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 16px;
+    cursor: pointer;
+}
+
+.coupon_check {
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: auto;
+    border-style: solid;
+    border-color: rgb(217, 217, 217);
+    font-size: 14px;
+    padding-top: 30px;
+    padding-right: 10px;
+}
+
+.coupon_apply {
+	width : 40px;
+	height : 30px;
+}
+
+/* 왼쪽 네번째 li */
+
+
+
+/* 왼쪽 다섯번째 li */
+
+.last_payment_div {    
+    display: flex;
+    padding-top: 19px;
+    height: 56px;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.last_payment_inDiv {
+    padding-left: 360px;
+    display: flex;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    width: 100%;
+}
+
+.last_payment_span1 {
+    font-weight: bold;
+    display: block;
+}
+.last_payment_span2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    margin-left: 8px;
+    margin-right: 29px;
+    display: block;
+}
+
+.btn03{width: 130px;
+    padding: 20px 10px; 
+    text-align: center;
+    border: 1px solid #f3405a;
+    background-color: white;
+    cursor: pointer;
+}
+
+.btn03:hover{
+    background-color: #f3405a;
+    border: 0;
+    color:white;
+}
+
+/* 오른쪽 ul */
+
+.right_ul {
+	margin-top: 110px;
+    float: right;
+    width: 410px;
+    background-color: rgb(235, 235, 235);
+}
+
+/* 오른쪽 첫번째 li */
+
+.stars {
+    padding-top: 4px;
+    float: left;
+    margin-right: 5px;
+    color: rgb(246, 88, 117);
+}
+
+.la_li {
+	width: 100%;
+    float: left;
+    height: 88px;
+    background: white;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+
+
+.rfs {
+    background-color: white;
+    padding-bottom: 24px;
+    /* margin-bottom: 10px; */
+    padding-top: 0px;
+}
+
+.rss {
+    background-color: white;
+    padding-top: 10px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.in_fs {
+    padding-top: 36px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 22px;
+}
+
+.in_div {
+    padding-top: 20px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 86%;
+    display: flex;
+    align-items: center;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(238, 238, 238);
+}
+
+.hotel_font {
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.room_detail {
+    margin-top: 7px;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.check_in {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    text-align: center;
+}
+
+.check_out {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    text-align: center;
+}
+
+.check_span {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+	min-width: 40px;
+    margin-left: 20px;
+    padding-top: 0px;
+    padding-right: 8px;
+    padding-left: 8px;
+    line-height: 20px;
+}
+
+
+/* 오른쪽 두번째 li */
+
+.room_price_title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding-top: 5px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+.room_price {
+    padding-top: 25px;
+}
+
+.room_price_in1 {
+    margin-bottom: 12px;
+    line-height: 24px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.room_price_in2 {
+    margin-bottom: 12px;
+    line-height: 24px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.room_price_line {
+    margin-top: 22px;
+    margin-right: auto;
+    margin-bottom: 12px;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(238, 238, 238);
+}
+
+.room_price_in3 {
+    margin-bottom: 12px;
+    line-height: 24px;
+    display: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.room_price_in4 {
+    margin-bottom: 12px;
+    line-height: 24px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.agree_box {
+    padding: 25px 10px 5px 10px;
+}
+
+.agree_box_div {
+    padding-bottom: 12px;
+    position: relative;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.agree_box_div1 {
+    padding: 5px 10px;
+    position: relative;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.agree_box_label {
+    position: relative;
+    display: flex;
+    white-space: inherit;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.agree_box_a {
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.agree_box_a1 {
+    margin-left: auto;
+    color: rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+/* 약관동의 클릭전 스타일 */
+.agree_checkBox {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+
